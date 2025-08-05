@@ -5,7 +5,7 @@
   * @brief   This file provides code for the configuration
   *          of all the requested memory to memory DMA transfers.
   ******************************************************************************
-  * @attention
+  * @attention 
   *
   * Copyright (c) 2025 STMicroelectronics.
   * All rights reserved.

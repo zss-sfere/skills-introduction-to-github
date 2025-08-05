@@ -1,0 +1,214 @@
+{
+  "name": "g0_bootload",
+  "type": "ARM",
+  "dependenceList": [],
+  "srcDirs": [
+    "Core",
+    "Drivers",
+    "self_component"
+  ],
+  "virtualFolder": {
+    "name": "<virtual_root>",
+    "files": [],
+    "folders": []
+  },
+  "outDir": "build",
+  "deviceName": null,
+  "packDir": null,
+  "miscInfo": {
+    "uid": "47c075dfc84c93edc8a8492365fe1333"
+  },
+  "targets": {
+    "Debug": {
+      "excludeList": [],
+      "toolchain": "GCC",
+      "compileConfig": {
+        "cpuType": "Cortex-M0+",
+        "floatingPointHardware": "none",
+        "scatterFilePath": "",
+        "useCustomScatterFile": true,
+        "storageLayout": {
+          "RAM": [],
+          "ROM": []
+        },
+        "options": "null"
+      },
+      "uploader": "JLink",
+      "uploadConfig": {
+        "bin": "",
+        "baseAddr": "",
+        "cpuInfo": {
+          "vendor": "ST",
+          "cpuName": "STM32G0B0"
+        },
+        "proType": 1,
+        "speed": 8000,
+        "otherCmds": ""
+      },
+      "uploadConfigMap": {
+        "JLink": {
+          "bin": "",
+          "baseAddr": "",
+          "cpuInfo": {
+            "vendor": "null",
+            "cpuName": "null"
+          },
+          "proType": 1,
+          "speed": 8000,
+          "otherCmds": ""
+        },
+        "OpenOCD": {
+          "bin": "",
+          "target": "stm32g0x",
+          "interface": "cmsis-dap",
+          "baseAddr": "0x08000000"
+        }
+      },
+      "custom_dep": {
+        "name": "default",
+        "incList": [
+          "Core/Inc",
+          "Drivers/STM32G0xx_HAL_Driver/Inc",
+          "Drivers/CMSIS/Device/ST/STM32G0xx/Include",
+          "Drivers/CMSIS/Include",
+          "self_component/flash",
+          "self_component/systick",
+          "self_component/uart_printf",
+          "self_component/log",
+          "self_component/bootload"
+        ],
+        "libList": [],
+        "defineList": [
+          "DEBUG",
+          "USE_FULL_LL_DRIVER",
+          "HSE_VALUE=8000000",
+          "HSE_STARTUP_TIMEOUT=100",
+          "LSE_STARTUP_TIMEOUT=5000",
+          "LSE_VALUE=32768",
+          "EXTERNAL_CLOCK_VALUE=48000",
+          "HSI_VALUE=16000000",
+          "LSI_VALUE=32000",
+          "VDD_VALUE=3300",
+          "PREFETCH_ENABLE=1",
+          "INSTRUCTION_CACHE_ENABLE=1",
+          "DATA_CACHE_ENABLE=1",
+          "STM32G0B1xx"
+        ]
+      },
+      "builderOptions": {
+        "GCC": {
+          "version": 5,
+          "beforeBuildTasks": [],
+          "afterBuildTasks": [],
+          "global": {
+            "$float-abi-type": "softfp",
+            "output-debug-info": "enable",
+            "misc-control": "--specs=nano.specs -u _printf_float"
+          },
+          "c/cpp-compiler": {
+            "language-c": "c99",
+            "language-cpp": "c++11",
+            "optimization": "level-0",
+            "warnings": "all-warnings",
+            "one-elf-section-per-function": true,
+            "one-elf-section-per-data": true
+          },
+          "asm-compiler": {
+            "ASM_FLAGS": "-DDEBUG"
+          },
+          "linker": {
+            "output-format": "elf",
+            "remove-unused-input-sections": true,
+            "LD_FLAGS": "-TSTM32G0B1RETX_FLASH.ld",
+            "$toolName": "auto"
+          }
+        }
+      }
+    },
+    "Release": {
+      "excludeList": [],
+      "toolchain": "GCC",
+      "compileConfig": {
+        "cpuType": "Cortex-M3",
+        "floatingPointHardware": "none",
+        "scatterFilePath": "",
+        "useCustomScatterFile": true,
+        "storageLayout": {
+          "RAM": [],
+          "ROM": []
+        },
+        "options": "null"
+      },
+      "uploader": "JLink",
+      "uploadConfig": {
+        "bin": "",
+        "baseAddr": "",
+        "cpuInfo": {
+          "vendor": "null",
+          "cpuName": "null"
+        },
+        "proType": 1,
+        "speed": 8000,
+        "otherCmds": ""
+      },
+      "uploadConfigMap": {},
+      "builderOptions": {
+        "GCC": {
+          "version": 5,
+          "beforeBuildTasks": [],
+          "afterBuildTasks": [],
+          "global": {
+            "$float-abi-type": "softfp",
+            "output-debug-info": "enable",
+            "misc-control": []
+          },
+          "c/cpp-compiler": {
+            "language-c": "c11",
+            "language-cpp": "c++11",
+            "optimization": "level-debug",
+            "warnings": "all-warnings",
+            "one-elf-section-per-function": true,
+            "one-elf-section-per-data": true,
+            "C_FLAGS": "",
+            "CXX_FLAGS": ""
+          },
+          "asm-compiler": {
+            "ASM_FLAGS": ""
+          },
+          "linker": {
+            "output-format": "elf",
+            "remove-unused-input-sections": true,
+            "LD_FLAGS": "",
+            "LIB_FLAGS": ""
+          }
+        }
+      },
+      "custom_dep": {
+        "name": "default",
+        "incList": [
+          "Core/Inc",
+          "Drivers/STM32G0xx_HAL_Driver/Inc",
+          "Drivers/CMSIS/Device/ST/STM32G0xx/Include",
+          "Drivers/CMSIS/Include"
+        ],
+        "defineList": [
+          "USE_FULL_LL_DRIVER",
+          "HSE_VALUE=8000000",
+          "HSE_STARTUP_TIMEOUT=100",
+          "LSE_STARTUP_TIMEOUT=5000",
+          "LSE_VALUE=32768",
+          "EXTERNAL_CLOCK_VALUE=48000",
+          "HSI_VALUE=16000000",
+          "LSI_VALUE=32000",
+          "VDD_VALUE=3300",
+          "PREFETCH_ENABLE=1",
+          "INSTRUCTION_CACHE_ENABLE=1",
+          "DATA_CACHE_ENABLE=1",
+          "STM32G0B1xx"
+        ],
+        "libList": []
+      }
+    }
+  },
+  "version": "3.5"
+}

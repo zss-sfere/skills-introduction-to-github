@@ -6,7 +6,7 @@
   *          of all used GPIO pins.
   ******************************************************************************
   * @attention 
-  *
+  * 
   * Copyright (c) 2025 STMicroelectronics.
   * All rights reserved.
   *
